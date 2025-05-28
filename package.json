@@ -1,7 +1,7 @@
 {
-  "name": "wikisubmission-discord-private",
+  "name": "wikisubmission-discord-service",
   "version": "1.0.0",
-  "description": "",
+  "description": "Public Discord bot for WikiSubmission.",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf ./build",
