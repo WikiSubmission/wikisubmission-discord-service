@@ -123,7 +123,7 @@ export class Bot {
                 }
             )
             console.log(
-                `Private Bot Commands Synced: ${slashCommands
+                `Commands Synced: ${slashCommands
                     .map((c) => `/${c.name}`)
                     .join(', ')}`
             )
