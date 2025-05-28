@@ -21,6 +21,12 @@ export class Bot {
         // [Define presence]
         presence: {
             status: 'online',
+            activities: [
+                {
+                    name: 'Righteousness',
+                    type: 5,
+                },
+            ]
         }
     })
 
