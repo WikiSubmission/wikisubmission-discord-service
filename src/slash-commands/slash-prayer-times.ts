@@ -81,7 +81,7 @@ export default function command(): WSlashCommand {
                 {
                   name: 'Now',
                   value: codify(
-                    `${capitalized(request.results.current_prayer)} (started ${request.results.current_prayer_time_elapsed} ago)`,
+                    `${capitalized(request.results.current_prayer)}`,
                   ),
                 },
                 {
