@@ -39,7 +39,7 @@ export default function command(): WSlashCommand {
       if (!appendix) {
         await interaction.reply({
           content: `\`Appendix # must be between 0 - 38\``,
-          ephemeral: true,
+          flags: ['Ephemeral'],
         });
       } else {
         if (

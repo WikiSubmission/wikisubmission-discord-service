@@ -24,7 +24,7 @@ export class HandleMediaRequest extends DiscordRequest {
     } catch (error: any) {
       await this.interaction.reply({
         content: `\`${error.message || 'Internal Server Error'}\``,
-        ephemeral: true,
+        flags: ['Ephemeral'],
       });
     }
   }

@@ -76,7 +76,7 @@ export default function command(): WSlashCommand {
       } catch (error) {
         await interaction.reply({
           content: `\`Verse '${verse}' not found\``,
-          ephemeral: true,
+          flags: ['Ephemeral'],
         });
       }
     },

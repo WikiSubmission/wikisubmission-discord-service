@@ -26,7 +26,7 @@ export default function command(): WSlashCommand {
       if (query.includes('-') || !query.includes(':')) {
         await interaction.reply({
           content: `\`Please request only one verse at a time.\``,
-          ephemeral: true,
+          flags: ['Ephemeral'],
         });
         return;
       }
@@ -61,7 +61,7 @@ export default function command(): WSlashCommand {
       } else {
         await interaction.reply({
           content: `\`Verse not found\``,
-          ephemeral: true,
+          flags: ['Ephemeral'],
         });
       }
     },

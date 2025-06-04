@@ -76,14 +76,14 @@ export default function listener(): WEventListener {
                   // Would be weird if we end up here, but might as well add it:
                   await interaction.reply({
                     content: `\`Unknown command\``,
-                    ephemeral: true,
+                    flags: ['Ephemeral'],
                   });
                 }
               } catch (error: any) {
                 // Errors thrown from re-processing the request, or otherwise an internal error.
                 await interaction.reply({
                   content: `\`${error.message || 'Internal Server Error'}\``,
-                  ephemeral: true,
+                  flags: ['Ephemeral'],
                 });
               }
             } else {
@@ -91,7 +91,7 @@ export default function listener(): WEventListener {
               await interaction.reply({
                 content:
                   '`Only the original requester may change the page. You can make your own request.`',
-                ephemeral: true,
+                flags: ['Ephemeral'],
               });
               return;
             }
@@ -99,7 +99,7 @@ export default function listener(): WEventListener {
             // Cached interaction not found in DB.
             await interaction.reply({
               content: '`Request expired. Please make a new one.`',
-              ephemeral: true,
+              flags: ['Ephemeral'],
             });
           }
         }

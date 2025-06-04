@@ -74,7 +74,7 @@ export default function command(): WSlashCommand {
       } else {
         await interaction.reply({
           content: `\`API Error\``,
-          ephemeral: true,
+          flags: ['Ephemeral'],
         });
       }
     },

@@ -124,7 +124,7 @@ export default function command(): WSlashCommand {
           content: `\`${
             request?.error?.description || 'Internal Server Error'
           }\``,
-          ephemeral: true,
+          flags: ['Ephemeral'],
         });
       }
     },
