@@ -156,8 +156,12 @@ export class Bot {
             this.addEventListener(
                 eventListener.name,
                 async (...args) => {
-                    // @ts-ignore
-                    await eventListener.handler(...args);
+                    try {
+                        // @ts-ignore
+                        await eventListener.handler(...args);
+                    } catch (error) {
+                        logError(error, eventListener.name);
+                    }
                 },
                 eventListener.once ? true : false,
             );
