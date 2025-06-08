@@ -87,8 +87,7 @@ export default function command(): WSlashCommand {
                 {
                   name: 'Up Next',
                   value: codify(
-                    `${capitalized(request.results.upcoming_prayer)} (${
-                      request.results.upcoming_prayer_time_left
+                    `${capitalized(request.results.upcoming_prayer)} (${request.results.upcoming_prayer_time_left
                     } left)`,
                   ),
                 },
@@ -114,16 +113,14 @@ export default function command(): WSlashCommand {
               })
               .setColor('DarkButNotBlack'),
           ],
-          ephemeral:
-            interaction.options.get('publicly-visible')?.value === 'yes'
-              ? false
-              : true,
+          flags: interaction.options.get('publicly-visible')?.value === 'yes'
+            ? ['Ephemeral']
+            : undefined,
         });
       } else {
         await interaction.reply({
-          content: `\`${
-            request?.error?.description || 'Internal Server Error'
-          }\``,
+          content: `\`${request?.error?.description || 'Internal Server Error'
+            }\``,
           flags: ['Ephemeral'],
         });
       }
